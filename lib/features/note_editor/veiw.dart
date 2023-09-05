@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart%20';
 import 'package:flutter_flutter/core/dimentions.dart';
 import 'package:flutter_flutter/features/note_editor/controller.dart';
-import 'package:flutter_flutter/weidget/app/app_aapbar.dart';
-import 'package:flutter_flutter/weidget/app/app_dialog.dart';
-import 'package:flutter_flutter/weidget/app/app_icon_button.dart';
-import 'package:flutter_flutter/weidget/app/app_text_field.dart';
+import 'package:flutter_flutter/widget/app/app_aapbar.dart';
+import 'package:flutter_flutter/widget/app/app_dialog.dart';
+import 'package:flutter_flutter/widget/app/app_icon_button.dart';
+import 'package:flutter_flutter/widget/app/app_text_field.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../modules/note.dart';
@@ -99,7 +99,7 @@ class _NoteEditorViewState extends State<NoteEditorView> {
             ),
             AppTextField(
               hint: 'Type Something...',
-              controller: controller.titleTXController,
+              controller: controller.subtitleTXController,
               validator: (v) {
                 if (v == null || v.trim().isEmpty) {
                   return 'Empty field';

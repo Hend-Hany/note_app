@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart%20';
 import 'package:flutter_flutter/core/dimentions.dart';
-import 'package:flutter_flutter/weidget/app/app_button.dart';
-import 'package:flutter_flutter/weidget/app/app_colors.dart';
-import 'package:flutter_flutter/weidget/app/app_text.dart';
+import 'package:flutter_flutter/widget/app/app_button.dart';
+import 'package:flutter_flutter/widget/app/app_colors.dart';
+import 'package:flutter_flutter/widget/app/app_text.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AppDialog extends StatelessWidget {

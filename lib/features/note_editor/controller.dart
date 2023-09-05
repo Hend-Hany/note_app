@@ -25,6 +25,12 @@ class NoteEditorController {
          .millisecondsSinceEpoch
          .toString();
      List<String> cachedNotes = pref.getStringList('notes') ?? [];
+
+     print(jsonEncode({
+       'title': titleTXController.text,
+       'subtitle': subtitleTXController.text,
+       'id': id,
+     }));
      cachedNotes.insert(
        0,
        jsonEncode({

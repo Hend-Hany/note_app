@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_flutter/core/dimentions.dart';
-import 'package:flutter_flutter/weidget/app/app_colors.dart';
+import 'package:flutter_flutter/widget/app/app_colors.dart';
 
 class AppIconButton extends StatelessWidget {
   const AppIconButton({Key? key,

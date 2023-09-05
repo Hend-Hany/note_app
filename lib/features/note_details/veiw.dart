@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_flutter/core/dimentions.dart';
 import 'package:flutter_flutter/core/route_utils/route_utils.dart';
-import 'package:flutter_flutter/weidget/app/app_aapbar.dart';
-import 'package:flutter_flutter/weidget/app/app_icon_button.dart';
-import 'package:flutter_flutter/weidget/app/app_text.dart';
+import 'package:flutter_flutter/widget/app/app_aapbar.dart';
+import 'package:flutter_flutter/widget/app/app_icon_button.dart';
+import 'package:flutter_flutter/widget/app/app_text.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../modules/note.dart';
 import '../note_editor/veiw.dart';

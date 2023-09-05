@@ -12,6 +12,8 @@ class AppText extends StatelessWidget {
     required this.title,
     this.fontFamily,
     this.textAlign,
+    this.textDecoration,
+    this.onTap,
   }) : super(key: key);
 
   final String title;
@@ -21,19 +23,25 @@ class AppText extends StatelessWidget {
   final FontWeight fontWeight;
   final String? fontFamily;
   final TextAlign? textAlign;
+  final TextDecoration? textDecoration;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      title,
-      maxLines: maxLines,
-      style: TextStyle(
-        color: color,
-        fontSize: fontSize,
-        fontWeight: fontWeight,
-        fontFamily: fontFamily
+    return InkWell(
+      onTap: onTap,
+      child: Text(
+        title,
+        maxLines: maxLines,
+        style: TextStyle(
+          color: color,
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+          fontFamily: fontFamily,
+          decoration: textDecoration
+        ),
+        textAlign: textAlign,
       ),
-      textAlign: textAlign,
     );
 
   }

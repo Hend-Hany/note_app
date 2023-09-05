@@ -12,12 +12,14 @@ class AppTextField extends StatelessWidget {
     this.validator,
     this.maxLength,
     this.controller,
+    this.onSaved
   });
 
   final String hint;
   final double cursorHeight;
   final double hintFontSize;
   final void Function(String)? onChanged;
+  final void Function(String?)? onSaved;
   final String? Function(String?)? validator;
   final int? maxLength;
   final TextEditingController? controller;
@@ -25,6 +27,7 @@ class AppTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       cursorColor: AppColors.white,
       cursorHeight: cursorHeight,
       keyboardAppearance: Brightness.dark,

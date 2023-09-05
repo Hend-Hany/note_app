@@ -9,11 +9,13 @@ class AppButton extends StatelessWidget {
     required this.title,
     this.onTap,
     this.color = AppColors.darkGray,
+    this.isLoading=false,
   });
 
   final String title;
   final void Function()? onTap;
   final Color color;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_flutter/core/dimentions.dart';
-import 'package:flutter_flutter/weidget/app/app_text.dart';
+import 'package:flutter_flutter/widget/app/app_text.dart';
 
 class CreateYourFirstNoteVector extends StatelessWidget {
   const CreateYourFirstNoteVector({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_flutter/core/dimentions.dart';
-import 'package:flutter_flutter/weidget/app/app_text.dart';
+import 'package:flutter_flutter/widget/app/app_text.dart';
 
 class NoSearchResultVector extends StatelessWidget {
   const NoSearchResultVector({Key? key}) : super(key: key);

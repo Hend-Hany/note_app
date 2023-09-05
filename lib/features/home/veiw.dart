@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_flutter/core/dimentions.dart';
 import 'package:flutter_flutter/core/route_utils/route_utils.dart';
 import 'package:flutter_flutter/features/home/controller.dart';
-import 'package:flutter_flutter/weidget/app/app_aapbar.dart';
-import 'package:flutter_flutter/weidget/app/app_colors.dart';
-import 'package:flutter_flutter/weidget/app/app_icon_button.dart';
-import 'package:flutter_flutter/weidget/app/create_your_first_note_vector.dart';
-import 'package:flutter_flutter/weidget/app/note_card.dart';
+import 'package:flutter_flutter/widget/app/app_aapbar.dart';
+import 'package:flutter_flutter/widget/app/app_colors.dart';
+import 'package:flutter_flutter/widget/app/app_icon_button.dart';
+import 'package:flutter_flutter/widget/app/create_your_first_note_vector.dart';
+import 'package:flutter_flutter/widget/app/note_card.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../note_editor/veiw.dart';
 import '../search/view.dart';
@@ -23,9 +23,17 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   void initState() {
-    controller.getCachedNotes();
+    controller.getCachedNotes().then((value) {
+      setState(() {});
+    });
+    // getCachedNotes();
     super.initState();
   }
+
+  // void getCachedNotes() async {
+  //   await controller.getCachedNotes();
+  //   setState(() {});
+  // }
 
   @override
   Widget build(BuildContext context) {

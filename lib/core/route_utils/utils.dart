@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../weidget/app/app_colors.dart';
+import 'package:flutter_flutter/widget/app/app_colors.dart';
 
 class Utils{
 

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart'hide SearchController;
 import 'package:flutter_flutter/core/dimentions.dart';
-import 'package:flutter_flutter/weidget/app/app_aapbar.dart';
-import 'package:flutter_flutter/weidget/app/search_text_field.dart';
-import '../../../weidget/app/no_search_result_vector.dart';
-import '../../modules/note.dart';
-import '../../weidget/app/note_card.dart';
+import 'package:flutter_flutter/modules/note.dart';
+import 'package:flutter_flutter/widget/app/app_aapbar.dart';
+import 'package:flutter_flutter/widget/app/no_search_result_vector.dart';
+import 'package:flutter_flutter/widget/app/note_card.dart';
+import 'package:flutter_flutter/widget/app/search_text_field.dart';
 import 'controller.dart';
 class SearchView extends StatefulWidget {
   const SearchView({Key? key, required this.notes}) : super(key: key);
