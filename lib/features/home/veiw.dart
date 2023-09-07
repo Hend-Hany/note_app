@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_flutter/core/caching_utils.dart';
 import 'package:flutter_flutter/core/dimentions.dart';
 import 'package:flutter_flutter/core/route_utils/route_utils.dart';
 import 'package:flutter_flutter/features/home/controller.dart';
+import 'package:flutter_flutter/features/login/view.dart';
 import 'package:flutter_flutter/widget/app/app_aapbar.dart';
 import 'package:flutter_flutter/widget/app/app_colors.dart';
 import 'package:flutter_flutter/widget/app/app_icon_button.dart';
@@ -46,7 +48,9 @@ class _HomeViewState extends State<HomeView> {
             onTap: () {
               RouteUtils.push(
                 context: context,
-                view: SearchView(notes: controller.notes,),
+                view: SearchView(
+                  notes: controller.notes,
+                ),
               );
             },
           ),
@@ -55,8 +59,12 @@ class _HomeViewState extends State<HomeView> {
           ),
           AppIconButton(
             icon: FontAwesomeIcons.circleInfo,
-            onTap: () {
-
+            onTap: () async {
+              await CachingUtils.deleteUser();
+              RouteUtils.pushAndPopAll(
+                context: context,
+                view: LoginView(),
+              );
             },
           ),
           SizedBox(
@@ -70,12 +78,10 @@ class _HomeViewState extends State<HomeView> {
             return CreateYourFirstNoteVector();
           }
           return RefreshIndicator(
-            onRefresh:()async{
+            onRefresh: () async {
               await controller.getCachedNotes();
-              setState(() {
-
-              });
-            } ,
+              setState(() {});
+            },
             color: AppColors.white,
             child: ListView.builder(
               padding: EdgeInsets.all(16),
@@ -94,16 +100,14 @@ class _HomeViewState extends State<HomeView> {
           FontAwesomeIcons.plus,
           size: 24.height,
         ),
-        onPressed: ()async {
-          final result=await RouteUtils.push(
+        onPressed: () async {
+          final result = await RouteUtils.push(
             context: context,
             view: NoteEditorView(),
           );
-          if(result != null){
+          if (result != null) {
             controller.notes.insert(0, result);
-            setState(() {
-
-            });
+            setState(() {});
           }
         },
       ),

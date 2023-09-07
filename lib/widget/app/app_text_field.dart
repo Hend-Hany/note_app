@@ -38,6 +38,7 @@ class AppTextField extends StatelessWidget {
       maxLines: null,
       textInputAction: TextInputAction.newline,
       onChanged: onChanged,
+      onSaved: onSaved,
       validator: validator,
       maxLength: maxLength,
       decoration: InputDecoration(

@@ -58,7 +58,7 @@ class SignUpView extends StatefulWidget {
             ),
             AppTextField(
               hint: 'Name',
-              onSaved: (v) => controller.email = v,
+              onSaved: (v) => controller.name = v,
               validator: ValidateUtils.name,
             ),
             Divider(

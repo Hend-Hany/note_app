@@ -16,7 +16,7 @@ class SignUpController {
     }
     try {
       final response = await Dio().post(
-        'https://ink-notes-app.onrender.com/api/v1/auth/login',
+        'https://ink-notes-app.onrender.com/api/v1/auth/register',
         data: {
           'email': email,
           'password': password,
