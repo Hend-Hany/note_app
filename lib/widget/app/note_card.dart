@@ -13,22 +13,22 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 
 class NoteCard extends StatelessWidget {
-  const NoteCard({Key? key, required this.note}) : super(key: key);
+  const NoteCard({Key? key, required this.note, this.onDismiss, this.onTap}) : super(key: key);
 
   final Note note;
+  final void Function()? onDismiss;
+  final void Function()? onTap;
+
 
   @override
   Widget build(BuildContext context) {
     return Dismissible(
       key: UniqueKey(),
       onDismissed: (direction) async{
-        final pref = await SharedPreferences.getInstance();
-        final cachedNotes=pref.getStringList('notes')??[];
-        final index=cachedNotes.indexWhere((element){
-          return note.id==jsonDecode(element)['id'];
-        } );
-        cachedNotes.removeAt(index);
-        pref.setStringList('notes', cachedNotes);
+        if (onDismiss!=null) {
+          onDismiss!();
+        }  ;
+
       },
       background: Container(
         margin:  EdgeInsets.only(bottom: 24.height),
@@ -44,10 +44,7 @@ class NoteCard extends StatelessWidget {
         padding: EdgeInsets.only(bottom: 24.height),
         child: InkWell(
           borderRadius:BorderRadius.circular(12) ,
-          onTap: ()=>RouteUtils.push(
-              context: context,
-              view: NoteDetailsView(note: note,)
-          ),
+          onTap:onTap,
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 12.width,vertical: 12.height),
             width: double.infinity,

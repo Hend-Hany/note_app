@@ -7,4 +7,12 @@ class Note{
     required this.id,
     required this.subtitle,
     required this.title});
+
+  factory Note.fromJson(Map<String,dynamic>json){
+    return Note(
+      id: json['_id'],
+      title: json['title'],
+      subtitle: json['subtitle'] ?? '',
+    );
+  }
 }

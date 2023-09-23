@@ -4,7 +4,6 @@ import 'app_colors.dart';
 class AppText extends StatelessWidget {
   const AppText( {
     Key? key,
-
     this.maxLines,
     this.color=AppColors.white,
     this.fontSize=14,

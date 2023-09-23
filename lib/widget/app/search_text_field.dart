@@ -24,7 +24,7 @@ class SearchTextField extends StatelessWidget {
           suffixIcon: Padding(
             padding: const EdgeInsets.only(right: 12),
             child: InkWell(
-              onTap:()=>RouteUtils.pop(context) ,
+              onTap:()=>RouteUtils.pop() ,
               child: Icon(
                 Icons.close,
                 color: AppColors.white,

@@ -26,7 +26,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading:enableBackButton?
       AppIconButton(
           icon: FontAwesomeIcons.chevronLeft,
-          onTap: ()=>RouteUtils.pop(context),
+          onTap: ()=>RouteUtils.pop(),
         padding: EdgeInsets.only(left: 16),
       ):SizedBox.shrink(),
       leadingWidth:enableBackButton? 50.width+16:0,
